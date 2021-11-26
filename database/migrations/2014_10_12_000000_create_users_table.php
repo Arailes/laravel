@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->integer('is_premium')->default('0')->comment('0 - Não é Conta Premiu, 1 - É conta Premium');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
