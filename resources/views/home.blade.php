@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.authentication')
 
 @section('content')
 <div class="container">
@@ -16,6 +16,9 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                <form action="{{route('logout')}}" method="post">@csrf
+                <button>Deslogar</button></form>
             </div>
         </div>
     </div>
