@@ -75,7 +75,11 @@
                             <a  href="{{ route('password.request') }}" class="reset">
                                 Não lembro minha senha
                             </a>
-                        @endif
+                @endif
+
+                <a  href="{{ route('register') }}" class="reset">
+                    Não Possui uma conta? Cadastre-se
+                </a>
             </fieldset>
         </form>
    
