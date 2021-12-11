@@ -16,4 +16,5 @@ class File extends Model
         'size',
         'hash',
     ];
+
 }

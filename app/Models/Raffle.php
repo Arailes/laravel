@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Raffle extends Model
 {
     use HasFactory;
+
+    protected $table = [
+        'title',
+        'description',
+        'price',
+        'ticket_amount',
+        'sweepstakes_amount',
+        'sweepstakes_date',
+        'hash_file',
+    ];
 }
