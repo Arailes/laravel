@@ -21,6 +21,7 @@ class CreateRafflesTable extends Migration
             $table->integer('ticket_amount');
             $table->integer('sweepstakes_amount');
             $table->dateTime('sweepstakes_date');
+            $table->string('hash_file',32);
             $table->timestamps();
         });
     }
