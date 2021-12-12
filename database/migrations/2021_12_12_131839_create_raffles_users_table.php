@@ -15,11 +15,11 @@ class CreateRafflesUsersTable extends Migration
     {
         Schema::create('raffles_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('raffles_id');
-            $table->foreignId('users_id');
-            $table->index(['raffles_id','users_id']);
-            $table->foreign('raffles_id')->references('id')->on('raffles');
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreignId('raffle_id');
+            $table->foreignId('user_id');
+            $table->index(['raffle_id','user_id']);
+            $table->foreign('raffle_id')->references('id')->on('raffles');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('raffles_amount');
             $table->timestamps();
         });

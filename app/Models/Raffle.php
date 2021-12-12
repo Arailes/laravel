@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Raffle extends Model
 {
     use HasFactory;
@@ -18,4 +19,8 @@ class Raffle extends Model
         'sweepstakes_date',
         'hash_file',
     ];
+
+    public function participants(){
+        return $this->belongsToMany(User::class,'raffles_users','raffle_id','user_id');
+    }
 }
