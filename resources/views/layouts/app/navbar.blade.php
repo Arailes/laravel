@@ -1,0 +1,12 @@
+<nav>
+    <div>
+        <div><p>Logo</p></div>
+        <div>
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+        </div>
+    </div>
+</nav>
