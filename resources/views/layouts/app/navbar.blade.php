@@ -1,11 +1,17 @@
-<nav>
+<nav class="navbar">
     <div>
         <div><p>Logo</p></div>
         <div>
             <ul>
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
+                <a href="">
+                    <li>Home</li>
+                </a>
+                <a href="">
+                    <li>Nova Rifa</li>
+                </a>
+                <a href="">
+                    <li>Perfil</li>
+                </a>
             </ul>
         </div>
     </div>
