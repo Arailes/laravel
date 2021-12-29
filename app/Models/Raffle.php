@@ -10,7 +10,7 @@ class Raffle extends Model
 {
     use HasFactory;
 
-    protected $table = [
+    protected $fillable = [
         'title',
         'description',
         'price',
@@ -20,7 +20,16 @@ class Raffle extends Model
         'hash_file',
     ];
 
+    protected static function boot(){
+        parent::boot();
+        static::creating(function($raffle){
+            $raffle->hash_file =  md5(uniqid(mt_rand(),true));
+        });
+    }
+
     public function participants(){
         return $this->belongsToMany(User::class,'raffles_users','raffle_id','user_id');
     }
+
+
 }

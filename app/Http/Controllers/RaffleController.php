@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Raffle;
+use Exception;
 use Illuminate\Http\Request;
 
 class RaffleController extends Controller
@@ -13,7 +15,7 @@ class RaffleController extends Controller
      */
     public function index()
     {
-        return view('app.raffles.raffle-create');
+        
     }
 
     /**
@@ -23,7 +25,7 @@ class RaffleController extends Controller
      */
     public function create()
     {
-        //
+        return view('app.raffles.raffle-create');
     }
 
     /**
@@ -34,7 +36,9 @@ class RaffleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataForm = $request->all();
+        Raffle::create($dataForm);
+        return view('app.raffles.raffle-create-page-2');
     }
 
     /**
