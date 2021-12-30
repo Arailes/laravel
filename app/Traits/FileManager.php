@@ -1,11 +1,19 @@
 <?php 
 
-namespace App;
+namespace App\Traits;
 
 use App\Models\File;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 trait FileManager{
+
+
+    protected function createFiles($files,String $hash, String $path){
+        foreach($files as $file){
+            $this->createFile( $file, $hash, $path);
+        }
+    }
 
     protected function createFile($file, String $hash, String $path){
         if ($file->isValid()){
@@ -20,7 +28,8 @@ trait FileManager{
                 'title' => $title,
                 'extension' => $extension,
                 'size' => $size,
-                'path' => $path
+                'path' => $path,
+                'hash' => $hash
             ];
 
            return File::create($fileInfo);
@@ -37,7 +46,7 @@ trait FileManager{
 
     protected function createFileName(String $originalName) : String{
         $slug = Str::slug($originalName);
-        $fileName = Carbon::now()->forma('h-i-s-d-m-Y-' . Str::random(5));
+        $fileName = Carbon::now()->format('h-i-s-d-m-Y-' . Str::random(5));
         return $fileName;
     }
 

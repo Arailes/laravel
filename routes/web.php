@@ -25,4 +25,6 @@ Route::group(['middleware'=>['auth']],function(){
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('rifas/{id}/images',[RaffleController::class,'storeImages'])->name('rifas.image.store');
 Route::resource('rifas',RaffleController::class);
+

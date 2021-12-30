@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Raffle;
+use App\Traits\FileManager;
 use Exception;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Type\Integer;
 
 class RaffleController extends Controller
 {
+
+    use FileManager;
     /**
      * Display a listing of the resource.
      *
@@ -35,10 +40,13 @@ class RaffleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        
         $dataForm = $request->all();
-        Raffle::create($dataForm);
-        return view('app.raffles.raffle-create-page-2');
+        $raffle = Raffle::create($dataForm);
+        return view('app.raffles.raffle-create-page-2',compact('raffle'));
+      
+        
     }
 
     /**
@@ -84,5 +92,13 @@ class RaffleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function storeImages(Request $request, $raffleId){
+        $files = $request->file();
+        $raffle = Raffle::find($raffleId);
+        $path =  '/raffles/images/'.$raffle->id;
+        $this->createFiles( $files, $raffle->hash_file, $path );
+    
     }
 }
