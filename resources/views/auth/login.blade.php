@@ -8,14 +8,14 @@
     <form method="POST" action="{{ route('login') }}" id="login">@csrf
         <fieldset class="form-auth" form="login">
             @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             @error('password')
-                        <span  role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                <span  role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
             <div class="form-group">
                 <label for="email" >Email</label>

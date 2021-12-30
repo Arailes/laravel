@@ -42,4 +42,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Raffles(){
+        $this->belongsToMany(Raffle::class,'raffles_users','user_id','raffle_id');
+    }
 }
