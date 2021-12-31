@@ -26,6 +26,5 @@
                 </div> 
             </fieldset>
         </div>
-        
     </form>
 @endsection
