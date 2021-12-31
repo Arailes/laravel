@@ -3,15 +3,29 @@
 @section('content')
     <form method="POST" action="{{route('rifas.image.store',$raffle->id)}}" enctype="multipart/form-data"> @csrf
         <div>
-            <label for="">Imagem</label>
-            <input type="file" name="file_1">
-            <input type="file" name="file_2">
-            <input type="file" name="file_3">
-            <input type="file" name="file_4">
-            <input type="file" name="file_5">
+            <fieldset>
+                <div class="form-group">
+                    <input type="file" name="file_1">
+                </div>
+                <div class="form-group">
+                    <input type="file" name="file_2">
+                </div>
+                <div class="form-group">
+                    <input type="file" name="file_3">
+                </div>
+                <div class="form-group">
+                    <input type="file" name="file_4">
+                </div>
+                <div class="form-group">
+                    <input type="file" name="file_5">
+                </div>  
+                <div class="form-group">
+                    <button>
+                        Próximo
+                    </button>
+                </div> 
+            </fieldset>
         </div>
-        <button>
-            Próximo
-        </button>
+        
     </form>
 @endsection

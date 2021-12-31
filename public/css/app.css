@@ -79,3 +79,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+main {
+  padding: 5rem;
+}
+
+fieldset .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 10rem;
+  margin-right: 3rem;
+}
+
+fieldset .form-group input {
+  height: 2rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding-left: 1rem;
+}
+
+fieldset .form-group textarea {
+  height: 5rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+fieldset .form-group button {
+  cursor: pointer;
+  align-self: flex-end;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+}
