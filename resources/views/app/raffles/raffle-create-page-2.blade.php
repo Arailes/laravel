@@ -8,7 +8,11 @@
             <fieldset >
                 <div class="image-raffle">
                     <div class="form-group">
-                        <label for="file_1">+</label>
+                       
+                        <label for="file_1">
+                            +
+                            <img  alt="" id="image">
+                        </label>
                         <input type="file" id="file_1" image name="file_1">
                     </div>
                     <div class="form-group">
@@ -41,3 +45,15 @@
         </div>
     </form>
 @endsection
+
+@push('js')
+    <script>
+        const input = document.querySelector('#file_1');
+        const image = document.querySelector('#image');
+
+        input.addEventListener('change',function(event){
+            image.src = URL.createObjectURL(event.target.files[0])
+            
+        })
+    </script>
+@endpush

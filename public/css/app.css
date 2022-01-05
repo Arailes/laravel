@@ -126,6 +126,8 @@ div.image-raffle input {
 }
 
 div.image-raffle label {
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
   font-size: 1.7rem;
   color: #fff;
@@ -137,6 +139,11 @@ div.image-raffle label {
   justify-content: center;
   background-color: #ccc;
   transition: 0.5s;
+}
+
+div.image-raffle label > img {
+  position: absolute;
+  width: 8.2rem;
 }
 
 div.image-raffle label:hover {
