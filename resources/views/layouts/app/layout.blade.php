@@ -17,5 +17,7 @@
     </main>
 
     @include('layouts.app.footer')
+
+    @stack('js')
 </body>
 </html>
