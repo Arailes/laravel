@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RaffleController;
+use App\Models\Raffle;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('rifas/{id}/images',[RaffleController::class,'storeImages'])->name('rifas.image.store');
 Route::resource('rifas',RaffleController::class);
 
+Route::view('testar-view','app.raffles.raffle-create-page-2',['raffle' => Raffle::first()]);

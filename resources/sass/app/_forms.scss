@@ -35,4 +35,42 @@ fieldset .form-group button{
     border: none;
 }
 
+div.image-raffle{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+div.image-raffle input{
+    display:none;
+}
+
+div.image-raffle label{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 1.7rem;
+    color:#fff;
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    transition: 0.5s;
+}
+
+div.image-raffle label > img{
+    position: absolute; 
+    width: 8.2rem;
+      
+}
+
+div.image-raffle label:hover{
+    background-color: #333;
+    transition: 0.5s;
+}
+
+
+
 
