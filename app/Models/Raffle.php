@@ -31,5 +31,9 @@ class Raffle extends Model
         return $this->belongsToMany(User::class,'raffles_users','raffle_id','user_id');
     }
 
+    public function images(){
+       return $this->hasMany(File::class,'hash','hash_file'); 
+    }
+
 
 }
