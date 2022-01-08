@@ -6,7 +6,7 @@
         @foreach ($raffles as $raffle)
             <li>
                 <div>
-                    <span>{{$raffle}}</span>  
+                    <span>{{$raffle->title}}</span>  
                 </div>
                 <div>
                     @foreach ($raffle->images as $image)
@@ -14,7 +14,7 @@
                     @endforeach
                 </div>
                 <div>
-                    <a href="">Mais Informações</a>
+                    <a href="{{route($riffle)}}">Mais Informações</a>
                 </div>
             </li>
         @endforeach

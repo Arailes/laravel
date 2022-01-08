@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\Auth;
 
 class Raffle extends Model
 {
@@ -24,6 +24,8 @@ class Raffle extends Model
         parent::boot();
         static::creating(function($raffle){
             $raffle->hash_file =  md5(uniqid(mt_rand(),true));
+            $raffle->slug = Str::slug($raffle->title);
+            $raffle->owner_id = Auth::user()->id;
         });
     }
 
