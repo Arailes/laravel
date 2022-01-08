@@ -9,8 +9,8 @@
                     <span>{{$raffle}}</span>  
                 </div>
                 <div>
-                    @foreach ($collection as $item)
-                        <img src="" alt="">   
+                    @foreach ($raffle->images as $image)
+                        <img src="{{$image->path}}" alt="{{$image->title}}">   
                     @endforeach
                 </div>
                 <div>
