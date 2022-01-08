@@ -27,6 +27,7 @@ Route::group(['middleware'=>['auth']],function(){
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('rifas/{id}/images',[RaffleController::class,'storeImages'])->name('rifas.image.store');
+Route::get('rifas/minhas',[RaffleController::class,'myRaffles'])->name('rifas.my');
 Route::resource('rifas',RaffleController::class);
 
 Route::view('testar-view','app.raffles.raffle-create-page-2',['raffle' => Raffle::first()]);

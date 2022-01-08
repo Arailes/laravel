@@ -10,11 +10,11 @@
                 </div>
                 <div>
                     @foreach ($raffle->images as $image)
-                        <img src="{{$image->path}}" alt="{{$image->title}}">   
+                        <img src="{{Storage::url($image->path)}}" alt="{{$image->title}}">   
                     @endforeach
                 </div>
                 <div>
-                    <a href="{{route($riffle)}}">Mais Informações</a>
+                    <a href="">Mais Informações</a>
                 </div>
             </li>
         @endforeach
