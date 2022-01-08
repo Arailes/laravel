@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Middleware\Authenticate;
 use App\Models\Raffle;
 use App\Traits\FileManager;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Ramsey\Uuid\Type\Integer;
 
 class RaffleController extends Controller
@@ -100,5 +101,11 @@ class RaffleController extends Controller
         $path =  '/raffles/images/'.$raffle->id;
         $this->createFiles( $files, $raffle->hash_file, $path );
     
+    }
+
+    public function myRaffles(){
+        $userId = Auth::user()->id;
+        $raffles = Raffle::where('owner_id',$userId)->get();
+        return view('app.raffles.my-raffles',compact('raffles'));
     }
 }
