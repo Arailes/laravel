@@ -150,3 +150,30 @@ div.image-raffle label:hover {
   background-color: #333;
   transition: 0.5s;
 }
+
+.my-raffles-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-raffles-body ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-raffles-body li {
+  margin: 1rem;
+}
+
+.my-raffles-body li > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.my-raffles-body li > div:nth-child(2) > img {
+  width: 9rem;
+}
