@@ -100,6 +100,7 @@ class RaffleController extends Controller
         $raffle = Raffle::find($raffleId);
         $path =  '/raffles/images/'.$raffle->id;
         $this->createFiles( $files, $raffle->hash_file, $path );
+        return redirect()->route('rifas.my');
     
     }
 

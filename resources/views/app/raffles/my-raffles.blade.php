@@ -15,6 +15,11 @@
                         @foreach ($raffle->images as $image)
                             <img src="{{Storage::url($image->path)}}" alt="{{$image->title}}">   
                         @endforeach
+                        <div>
+                            @foreach ($raffle->images as $image)
+                                <span></span>   
+                            @endforeach 
+                        </div>
                     </div>
                     <div>
                         <a href="">Mais Informações</a>
