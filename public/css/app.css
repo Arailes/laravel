@@ -186,7 +186,7 @@ div.image-raffle label:hover {
   width: 11rem;
 }
 
-.my-raffles-body li > div:nth-child(2) > div {
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(2) {
   width: 100%;
   z-index: 50px;
   top: 9rem;
@@ -194,7 +194,7 @@ div.image-raffle label:hover {
   display: flex;
   justify-content: center;
 }
-.my-raffles-body li > div:nth-child(2) > div span {
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(2) span {
   border-radius: 50%;
   margin: 0 3px;
   width: 10px;
@@ -202,6 +202,29 @@ div.image-raffle label:hover {
   background-color: #fff;
   box-shadow: 0 0 3px black;
   border: solid #333 1px;
+}
+
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(1) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(1) button {
+  cursor: pointer;
+  width: 2.5rem;
+  height: 100%;
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(1) button:hover {
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .my-raffles-body a {

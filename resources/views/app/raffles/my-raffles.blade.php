@@ -12,6 +12,15 @@
                         <span>{{$raffle->title}}</span>  
                     </div>
                     <div>
+                        <div class="controls">
+                            <button data-type="prev">
+                                <<
+                            </button>
+                            <button>
+                                >>
+                            </button data-type="next">
+                        </div>
+                        
                         @foreach ($raffle->images as $image)
                             <img src="{{Storage::url($image->path)}}" alt="{{$image->title}}">   
                         @endforeach
@@ -20,6 +29,7 @@
                                 <span></span>   
                             @endforeach 
                         </div>
+                        
                     </div>
                     <div>
                         <a href="">Mais Informações</a>
@@ -30,4 +40,10 @@
     </div>
     
 @endsection
+
+@push('js')
+    <script>
+
+    </script>
+@endpush
 
