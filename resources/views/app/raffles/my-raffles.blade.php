@@ -16,14 +16,16 @@
                             <button data-type="prev">
                                 <<
                             </button>
-                            <button>
+                            <button data-type="next"  onClick='nextImage({{$raffle->images->count()}},"{{$raffle->slug}}")'>
                                 >>
-                            </button data-type="next">
+                            </button>
+                        </div>
+                        <div id="{{$raffle->slug}}">
+                            @foreach ($raffle->images as $image)
+                                <img src="{{Storage::url($image->path)}}" alt="{{$image->title}}">   
+                            @endforeach
                         </div>
                         
-                        @foreach ($raffle->images as $image)
-                            <img src="{{Storage::url($image->path)}}" alt="{{$image->title}}">   
-                        @endforeach
                         <div>
                             @foreach ($raffle->images as $image)
                                 <span></span>   
@@ -43,7 +45,9 @@
 
 @push('js')
     <script>
-
+        function nextImage(imagesAmount, idImageDiv){
+            document.getElementById(idImageDiv);
+        }
     </script>
 @endpush
 
