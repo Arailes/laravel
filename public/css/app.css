@@ -192,6 +192,7 @@ div.image-raffle label:hover {
 
 .my-raffles-body li > div:nth-child(2) > div:nth-of-type(2) > img {
   width: 11rem;
+  transition: 0.5s;
 }
 
 .my-raffles-body li > div:nth-child(2) > div:nth-of-type(3) {

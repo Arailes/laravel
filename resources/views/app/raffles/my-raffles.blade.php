@@ -22,7 +22,7 @@
                         </div>
                         <div id="{{$raffle->slug}}">
                             @foreach ($raffle->images as $image)
-                                <img src="{{Storage::url($image->path)}}" alt="{{$image->title}}">   
+                                <img src="{{Storage::url($image->path)}}" style="margin-left:0" alt="{{$image->title}}">   
                             @endforeach
                         </div>
                         
@@ -46,7 +46,24 @@
 @push('js')
     <script>
         function nextImage(imagesAmount, idImageDiv){
-            document.getElementById(idImageDiv);
+            totalMarginLeftImages = imagesAmount * (-176);
+            
+            const imageDiv =  document.getElementById(idImageDiv);
+            const firstImage= imageDiv.querySelector('img');
+            const marginLeftFirstImage =  firstImage.style.marginLeft;
+            const marginLeftFirstImageFormated =  parseInt(marginLeftFirstImage.replace('px',''));
+            const newMarginLeft =marginLeftFirstImageFormated - 176;
+            if(totalMarginLeftImages < newMarginLeft){
+                console.log(marginLeftFirstImageFormated)
+                
+
+                firstImage.style.marginLeft = newMarginLeft + 'px';
+            }else{
+                firstImage.style.marginLeft = '0px';
+            }
+            
+
+            
         }
     </script>
 @endpush
