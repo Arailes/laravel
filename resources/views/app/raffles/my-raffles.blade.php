@@ -13,7 +13,7 @@
                     </div>
                     <div>
                         <div class="controls">
-                            <button data-type="prev">
+                            <button data-type="prev" onClick='prevImage({{$raffle->images->count()}},"{{$raffle->slug}}")'>
                                 <<
                             </button>
                             <button data-type="next"  onClick='nextImage({{$raffle->images->count()}},"{{$raffle->slug}}")'>
@@ -55,15 +55,27 @@
             const newMarginLeft =marginLeftFirstImageFormated - 176;
             if(totalMarginLeftImages < newMarginLeft){
                 console.log(marginLeftFirstImageFormated)
-                
-
                 firstImage.style.marginLeft = newMarginLeft + 'px';
             }else{
                 firstImage.style.marginLeft = '0px';
-            }
-            
+            }   
+        }
 
+        function prevImage(imagesAmount, idImageDiv){
+            totalMarginLeftImages = imagesAmount * (-176);
             
+            const imageDiv =  document.getElementById(idImageDiv);
+            const firstImage= imageDiv.querySelector('img');
+            const marginLeftFirstImage =  firstImage.style.marginLeft;
+            const marginLeftFirstImageFormated =  parseInt(marginLeftFirstImage.replace('px',''));
+            const newMarginLeft =marginLeftFirstImageFormated + 176;
+            if(newMarginLeft <= 0){
+                console.log(marginLeftFirstImageFormated)
+                firstImage.style.marginLeft = newMarginLeft + 'px';
+            }else{
+                console.log(totalMarginLeftImages);
+                firstImage.style.marginLeft = (totalMarginLeftImages + 176 )  + 'px';
+            }   
         }
     </script>
 @endpush
