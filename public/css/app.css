@@ -212,6 +212,9 @@ div.image-raffle label:hover {
   box-shadow: 0 0 3px black;
   border: solid #333 1px;
 }
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(3) span:nth-of-type(1) {
+  background-color: red;
+}
 
 .my-raffles-body li > div:nth-child(2) > div:nth-of-type(1) {
   width: 100%;

@@ -26,7 +26,7 @@
                             @endforeach
                         </div>
                         
-                        <div>
+                        <div id="{{$raffle->slug}}_amount">
                             @foreach ($raffle->images as $image)
                                 <span></span>   
                             @endforeach 
@@ -46,15 +46,18 @@
 @push('js')
     <script>
         function nextImage(imagesAmount, idImageDiv){
+            
             totalMarginLeftImages = imagesAmount * (-176);
             
             const imageDiv =  document.getElementById(idImageDiv);
             const firstImage= imageDiv.querySelector('img');
             const marginLeftFirstImage =  firstImage.style.marginLeft;
             const marginLeftFirstImageFormated =  parseInt(marginLeftFirstImage.replace('px',''));
+            
             const newMarginLeft =marginLeftFirstImageFormated - 176;
+            changeBallColor(idImageDiv + '_amount', marginLeftFirstImageFormated / -176)
             if(totalMarginLeftImages < newMarginLeft){
-                console.log(marginLeftFirstImageFormated)
+                // console.log(marginLeftFirstImageFormated)
                 firstImage.style.marginLeft = newMarginLeft + 'px';
             }else{
                 firstImage.style.marginLeft = '0px';
@@ -70,12 +73,26 @@
             const marginLeftFirstImageFormated =  parseInt(marginLeftFirstImage.replace('px',''));
             const newMarginLeft =marginLeftFirstImageFormated + 176;
             if(newMarginLeft <= 0){
-                console.log(marginLeftFirstImageFormated)
+                // console.log(marginLeftFirstImageFormated)
                 firstImage.style.marginLeft = newMarginLeft + 'px';
             }else{
-                console.log(totalMarginLeftImages);
+                // console.log(totalMarginLeftImages);
                 firstImage.style.marginLeft = (totalMarginLeftImages + 176 )  + 'px';
             }   
+        }
+
+        function changeBallColor(divElement,idBall){
+            const div = document.getElementById(divElement);
+            const balls = div.querySelectorAll('span');
+            console.log(idBall);
+           balls.forEach((element,key) => {
+               if(idBall + 1 == key){
+                element.style.backgroundColor="red"   
+               }else{
+                element.style.backgroundColor="#fff"
+               }
+                
+           });
         }
     </script>
 @endpush

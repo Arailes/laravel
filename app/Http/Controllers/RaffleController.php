@@ -101,7 +101,6 @@ class RaffleController extends Controller
         $path =  '/raffles/images/'.$raffle->id;
         $this->createFiles( $files, $raffle->hash_file, $path );
         return redirect()->route('rifas.my');
-    
     }
 
     public function myRaffles(){
