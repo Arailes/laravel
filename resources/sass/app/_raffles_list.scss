@@ -1,7 +1,7 @@
 .my-raffles-title{
     display:flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 
@@ -104,4 +104,9 @@
     background-color: #333;
     color: #fff;
     border-radius: 0.6rem;
+}
+
+
+.my-raffles{
+    margin-left: 22rem;
 }

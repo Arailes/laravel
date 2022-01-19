@@ -1,46 +1,48 @@
 @extends('layouts.app.layout')
 
 @section('content')
-    <div class="my-raffles-title">
-        <h3>Minhas Rifas</h3>
-    <div>
-    <div class="my-raffles-body">
-        <ul>
-            @foreach ($raffles as $raffle)
-                <li>
-                    <div>
-                        <span>{{$raffle->title}}</span>  
-                    </div>
-                    <div>
-                        <div class="controls">
-                            <button data-type="prev" onClick='prevImage({{$raffle->images->count()}},"{{$raffle->slug}}")'>
-                                <<
-                            </button>
-                            <button data-type="next"  onClick='nextImage({{$raffle->images->count()}},"{{$raffle->slug}}")'>
-                                >>
-                            </button>
+    <div class="my-raffles">
+        <div class="my-raffles-title">
+            <h3>Minhas Rifas</h3>
+        <div>
+        <div class="my-raffles-body">
+            <ul>
+                @foreach ($raffles as $raffle)
+                    <li>
+                        <div>
+                            <span>{{$raffle->title}}</span>  
                         </div>
-                        <div id="{{$raffle->slug}}">
-                            @foreach ($raffle->images as $image)
-                                <img src="{{Storage::url($image->path)}}" style="margin-left:0" alt="{{$image->title}}">   
-                            @endforeach
+                        <div>
+                            <div class="controls">
+                                <button data-type="prev" onClick='prevImage({{$raffle->images->count()}},"{{$raffle->slug}}")'>
+                                    <<
+                                </button>
+                                <button data-type="next"  onClick='nextImage({{$raffle->images->count()}},"{{$raffle->slug}}")'>
+                                    >>
+                                </button>
+                            </div>
+                            <div id="{{$raffle->slug}}">
+                                @foreach ($raffle->images as $image)
+                                    <img src="{{Storage::url($image->path)}}" style="margin-left:0" alt="{{$image->title}}">   
+                                @endforeach
+                            </div>
+                            
+                            <div id="{{$raffle->slug}}_amount">
+                                @foreach ($raffle->images as $image)
+                                    <span></span>   
+                                @endforeach 
+                            </div>
+                            
                         </div>
-                        
-                        <div id="{{$raffle->slug}}_amount">
-                            @foreach ($raffle->images as $image)
-                                <span></span>   
-                            @endforeach 
+                        <div>
+                            <a href="">Mais Informações</a>
                         </div>
-                        
-                    </div>
-                    <div>
-                        <a href="">Mais Informações</a>
-                    </div>
-                </li>
-            @endforeach
-        </ul>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
-    
+
 @endsection
 
 @push('js')

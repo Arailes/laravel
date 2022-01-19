@@ -81,7 +81,7 @@ table {
 }
 
 main {
-  padding: 5rem;
+  padding: 5rem 2rem;
 }
 
 fieldset .form-group {
@@ -154,7 +154,7 @@ div.image-raffle label:hover {
 .my-raffles-title {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .my-raffles-body ul {
@@ -252,4 +252,8 @@ div.image-raffle label:hover {
   background-color: #333;
   color: #fff;
   border-radius: 0.6rem;
+}
+
+.my-raffles {
+  margin-left: 22rem;
 }
