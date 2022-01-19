@@ -6,7 +6,7 @@
                 <a href="">
                     <li>Home</li>
                 </a>
-                <a href="">
+                <a href="{{route('rifas.create')}}">
                     <li>Nova Rifa</li>
                 </a>
                 <a href="">

@@ -81,7 +81,7 @@ table {
 }
 
 main {
-  padding: 5rem;
+  padding: 5rem 2rem;
 }
 
 fieldset .form-group {
@@ -149,4 +149,111 @@ div.image-raffle label > img {
 div.image-raffle label:hover {
   background-color: #333;
   transition: 0.5s;
+}
+
+.my-raffles-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.my-raffles-body ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-raffles-body li {
+  margin: 0.7rem;
+}
+
+.my-raffles-body li > div:nth-child(2) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.my-raffles-body li > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+}
+
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(2) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(2) > img {
+  width: 11rem;
+  transition: 0.5s;
+}
+
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(3) {
+  width: 100%;
+  z-index: 50px;
+  top: 9rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(3) span {
+  border-radius: 50%;
+  margin: 0 3px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 3px black;
+  border: solid #333 1px;
+}
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(3) span:nth-of-type(1) {
+  background-color: red;
+}
+
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(1) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(1) button {
+  cursor: pointer;
+  width: 2.5rem;
+  height: 100%;
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.my-raffles-body li > div:nth-child(2) > div:nth-of-type(1) button:hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.my-raffles-body a {
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 3rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0.6rem;
+}
+
+.my-raffles {
+  margin-left: 22rem;
 }
