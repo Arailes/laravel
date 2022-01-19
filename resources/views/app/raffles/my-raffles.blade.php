@@ -55,7 +55,7 @@
             const marginLeftFirstImageFormated =  parseInt(marginLeftFirstImage.replace('px',''));
             
             const newMarginLeft =marginLeftFirstImageFormated - 176;
-            changeBallColor(idImageDiv + '_amount', marginLeftFirstImageFormated / -176)
+            changeBallColor(idImageDiv + '_amount', newMarginLeft / -176)
             if(totalMarginLeftImages < newMarginLeft){
                 // console.log(marginLeftFirstImageFormated)
                 firstImage.style.marginLeft = newMarginLeft + 'px';
@@ -72,6 +72,7 @@
             const marginLeftFirstImage =  firstImage.style.marginLeft;
             const marginLeftFirstImageFormated =  parseInt(marginLeftFirstImage.replace('px',''));
             const newMarginLeft =marginLeftFirstImageFormated + 176;
+            changeBallColor(idImageDiv + '_amount', newMarginLeft / -176)
             if(newMarginLeft <= 0){
                 // console.log(marginLeftFirstImageFormated)
                 firstImage.style.marginLeft = newMarginLeft + 'px';
@@ -86,7 +87,13 @@
             const balls = div.querySelectorAll('span');
             console.log(idBall);
            balls.forEach((element,key) => {
-               if(idBall + 1 == key){
+               if(idBall == balls.length){
+                   idBall = 0;
+               }
+               if(idBall == -1){
+                   idBall = balls.length - 1
+               }
+               if(idBall == key ){
                 element.style.backgroundColor="red"   
                }else{
                 element.style.backgroundColor="#fff"
